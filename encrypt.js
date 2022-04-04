@@ -3,12 +3,14 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { Client, Intents, Constants } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const mySecret = process.env[`TOKEN`];
 const morseCode = require('./morseCode');
 const rot13 = require('./rot13');
 const vigenere = require('./vigenere');
 const GUILD_ID = '498171865152487424';
 const BOT_ID = '958813631905169418';
+
+require('dotenv').config();
+const mySecret = process.env.DISCORD_TOKEN;
 
 // register the '/' commands
 const commands = [
